@@ -1,114 +1,104 @@
 // Usuarios
-function Usuario(dni, nombre, apellidos, usuario, contraseña, tipo_usuario, activo) {
-  this.id = Usuario.generarId();
-  this.dni = dni;
-  this.nombre = nombre;
-  this.apellidos = apellidos;
-  this.usuario = usuario;
-  this.contraseña = contraseña;
-  this.tipo_usuario = tipo_usuario;  
-  this.activo = activo;
-}
+    function usuario (dni, nombre, apellidos, usuario, contraseña, tipo_usuario, activo) {
+      this.id = usuario.generarId();
+      this.dni = dni;
+      this.nombre = nombre;
+      this.apellidos = apellidos;
+      this.usuario = usuario;
+      this.contraseña = contraseña;
+      this.tipo_usuario = tipo_usuario;  
+      this.activo = activo;
+    
+    }
+  
+    //ID incremental
+    static generarId() {
+      if (!this.contador) {
+        this.contador = 0;
+      }
+      this.contador++;
+      return this.contador;
+    }
+  
+  
+  // Cursos
 
-// ID incremental
-Usuario.generarId = function() {
-  if (!this.contador) {
-    this.contador = 0;
-  }
-  this.contador++;
-  return this.contador;
-}
+    function curso (nombre, descripcion) {
+      this.id = Curso.generarId();
+      this.nombre = nombre;
+      this.id_a1 = id_a1;
+    }
+  
+    static generarId() {
+      if (!this.contador) {
+        this.contador = 0;
+      }
+      this.contador++;
+      return this.contador;
+    }
+  
+  
+  // Notas
+  
+    function nota (id_alumno, id_curso, nota) {
+      this.id = Nota.generarId();
+      this.id_alumno = id_alumno;
+      this.id_curso = id_curso;
+      this.nota = nota;
+    }
 
-// Cursos
-function Curso(nombre, id_a1) {
-  this.id = Curso.generarId();
-  this.nombre = nombre;
-  this.id_a1 = id_a1;
-}
+    //ID incremental para notas
+    static generarId() {
+        if (!this.contador) {
+          this.contador = 0;
+        }
+        this.contador++;
+        return this.contador;   
 
-Curso.generarId = function() {
-  if (!this.contador) {
-    this.contador = 0;
-  }
-  this.contador++;
-  return this.contador;
-}
-
-// Notas
-function Nota(id_alumno, id_curso, nota) {
-  this.id = Nota.generarId();
-  this.id_alumno = id_alumno;
-  this.id_curso = id_curso;
-  this.nota = nota;
-}
-
-// ID incremental para notas
-Nota.generarId = function() {
-  if (!this.contador) {
-    this.contador = 0;
-  }
-  this.contador++;
-  return this.contador;   
-}
-
-// Asignatura
-function Asignatura(nombre, id_profesor1)  {
-  this.id = Asignatura.generarId();
-  this.nombre = nombre;
-  this.id_profesor1 = id_profesor1;
-}
-
-Asignatura.generarId = function() {
-  if (!this.contador) {
-    this.contador = 0;
-  }
-  this.contador++;
-  return this.contador;
-}
-
-// Declarar 3 objetos de cada modelo de datos
+        }
+    
+  
+  // Asignatura
+    function Asignatura(nombre, id_profesor1)  {
+      this.id = Asignatura.generarId();
+      this.nombre = nombre;
+      this.id_profesor1 = id_profesor1;
+    }
+  
+    static generarId() {
+      if (!this.contador) {
+        this.contador = 0;
+      }
+      this.contador++;
+      return this.contador;
+    }
+  
+  
+  // Declarar 3 objetos de cada modelo de datos
 
 var usuarios = [
-  new Usuario("12345678A", "Juan", "Pérez", "juanperez", "contraseña1", 1, true),
-  new Usuario("23456789B", "Ana", "García", "anagarcia", "contraseña2", 2, true),
-  new Usuario("34567890C", "Pedro", "Martínez", "pedromartinez", "contraseña3", 3, false)
+var usuario1 = new Usuario("12345678A", "Juan", "Pérez", "juanperez", "contraseña1", 1, true);
+var usuario2 = new Usuario("23456789B", "Ana", "García", "anagarcia", "contraseña2", 2, true);
+var usuario3 = new Usuario("34567890C", "Pedro", "Martínez", "pedromartinez", "contraseña3", 3, false);
 ];
 
 var cursos = [
-  new Curso("Programación2000", 1),
-  new Curso("Programación2001", 1),
-  new Curso("Programación2002", 1)
+var curso1 = new Curso("Programación2000", 1);
+var curso2 = new Curso("Programación2001", 1);
+var curso3 = new Curso("Programación2002", 1);
 ];
-
+  
 var notas = [
-  new Nota(1, 1, 8),
-  new Nota(1, 2, 7),
-  new Nota(2, 2, 9)
+var nota1 = new Nota(1, 1, 8, 10);
+var nota2 = new Nota(1, 2, 7, 3);
+var nota3 = new Nota(2, 2, 9, 8);
 ];
 
 var asignaturas = [
-  new Asignatura("Lengua", 1),
-  new Asignatura("Física", 2),
-  new Asignatura("Inglés", 3)
+var asignatura3 = new Asignatura("Lengua", 1);
+var asignatura4 = new Asignatura("Física", 2);
+var asignatura5 = new Asignatura("Inglés", 3);
 ];
-
-var data = {
-  usuarios: usuarios,
-  cursos: cursos,
-  notas: notas,
-  asignaturas: asignaturas
-};
-
-//convertir array en JSON 
-var jsondata = JSON.stringify(data);
-
-console.log(jsondata);
-
-//convertir JSON en array
-var arraydata = JSON.parse(jsondata);
-
-console.log(arraydata);
-
 
 // Recorremos usuarios y mostramos por consola las propiedades
 for (var i = 0; i < usuarios.length; i++) {
@@ -130,13 +120,14 @@ for(var i=0; i < cursos.length; i++) {
 
 // Recorremos notas y mostramos por consola las propiedades
 for (var i=0; i < notas.length; i++){
-    console.log("ID alumno: " + notas[i].id_alumno);
-    console.log("ID asignatura: " + notas[i].id_asignatura);
-    console.log("ID curso: " + notas[i].id_curso);
+    console.log("ID alumno: " + notas[1].id_alumno);
+    console.log("ID asignatura: " + notas[1].id_asignatura);
+    console.log("ID curso: " + notas[1].id_curso);
 }
 
 // Recorremos asignaturas y mostramos por consola las propiedades
 for (var i=0; i < asignaturas.length; i++){
-    console.log("Nombre: " + asignaturas[i].nombre);
-    console.log("ID profesor: " + asignaturas[i].id_profesor1);
+    console.log("Nombre: " + asignaturas[1].nombre);
+    console.log("ID profesor: " + asignaturas[1].id_profesor1);
+   
 }
