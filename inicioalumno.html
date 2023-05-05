@@ -12,29 +12,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="style" href="inicioalumno.css">
-    <style>
-      .navbar-nav.custom-margin > li {
-        margin-right: 20px;
-        margin-left: 20px;
-      }
-    </style>
+
+    
  
       </head>
     <header>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mx-auto my-2" style="padding: 0 300px; height: 50px;">
-      <a class="navbar-brand" href="inicioalumno.html">Inicio</a>
+    <nav class="navbar navbar-expand-lg navbar-light bd-navbar" style="padding: 0 300px; height: 60px; background-color: #91eefa;">
+      <a class="navbar-brand" href="inicioalumno.html"><img src="Jose-cabanillas.jpg" width="70" class="rounded-circle"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse w-100" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="backnotas.html">Notas<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="backnotas.html">Notas<span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cursos</a>
+            <a class="nav-link" href="#">Curso</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#todo">To-Do</a>
@@ -58,15 +54,31 @@
     <body>
 
 <br><br><br><br>
-      <img src="Jose-cabanillas.jpg" alt="Logo" class="rounded-circle" height="100px"><h3>Bruno Cicerone</h3>
+
+
+<div class="d-flex justify-content-around">
+  <div>
+    <img src="Jose-cabanillas.jpg" alt="Logo" class="rounded-circle" height="100px">
+  </div>
+  <div class="align-self-center">
+    <h3>Bruno Cicerone</h3>
+  </div>
+  <div class="align-self-center">
+    %
+  </div>
+</div>
+
+
+ 
 
   <br><br><br><br><br>
   
   <div>
     
+    <section>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-9 offset-md-2">
+        <div class="col-md-8 offset-md-2">
           <table class="table">
             <thead class="thead-dark" >
               <tr>
@@ -84,11 +96,14 @@
         </div>
       </div>
     </div>
-     
+  </section>
 
 
-       <br><br><br> <br><br><br> <br><br><br>
+       <br><br><br> <br><br>
   
+
+       <!--TO DO LIST-->
+      <aside>
       <div  class="row d-flex justify-content-center container">
         <div class="col-md-7">
           <div class="card-hover-shadow-2x mb-3 card">
@@ -241,7 +256,7 @@
         </div>
     </div>
 </div>
-
+</aside>
 
 
 
@@ -250,6 +265,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
     </body>
 </html>
